@@ -59,6 +59,16 @@ namespace FileIO
             }
 
         }
+        public static void WriteUsingStreamWriter()
+        {
+            String path = @"C:\Users\kkancha\Downloads\StreamWriter.txt";
+            using (StreamWriter sw = File.AppendText(path))
+            {
+                sw.WriteLine("Hello everyone..... Dotnet is awesome");
+                sw.Close();
+            }
+
+        }
         static void Main(string[] args)
         {
             FileExists();
@@ -70,6 +80,8 @@ namespace FileIO
             //Deletefile();
             Console.WriteLine("_____________");
             ReadFromStreamReader();
+            WriteUsingStreamWriter();
+           
 
         }
     }
