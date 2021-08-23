@@ -46,6 +46,19 @@ namespace FileIO
             String path= @"C:\Users\kkancha\Downloads\SampleNew.txt";
             File.Delete(path);
         }
+        public static void ReadFromStreamReader()
+        {
+            String path= @"C:\Users\kkancha\Downloads\Sample.txt";
+            using (StreamReader sr = File.OpenText(path))
+            {
+                String s = "";
+                while ((s = sr.ReadLine()) != null)
+                {
+                    Console.WriteLine(s);
+                }
+            }
+
+        }
         static void Main(string[] args)
         {
             FileExists();
@@ -54,7 +67,10 @@ namespace FileIO
             Console.WriteLine("_____________");
             ReadAllText();
             //FileCopy();
-            Deletefile();
+            //Deletefile();
+            Console.WriteLine("_____________");
+            ReadFromStreamReader();
+
         }
     }
 }
