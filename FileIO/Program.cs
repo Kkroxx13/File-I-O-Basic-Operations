@@ -38,8 +38,13 @@ namespace FileIO
         public static void FileCopy()
         {
             String path= @"C:\Users\kkancha\Downloads\Sample.txt";
-            String copyPath = @"C:\Users\kkancha\Downloads\SampleNew.txt";
+            String copyPath = @"C:\Users\kkancha\Downloads\SampleNew1.txt";
             File.Copy(path, copyPath);
+        }
+        public static void Deletefile()
+        {
+            String path= @"C:\Users\kkancha\Downloads\SampleNew.txt";
+            File.Delete(path);
         }
         static void Main(string[] args)
         {
@@ -48,7 +53,8 @@ namespace FileIO
             ReadAllLines();
             Console.WriteLine("_____________");
             ReadAllText();
-            FileCopy();
+            //FileCopy();
+            Deletefile();
         }
     }
 }
